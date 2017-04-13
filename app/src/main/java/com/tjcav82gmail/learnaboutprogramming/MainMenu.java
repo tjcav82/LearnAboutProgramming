@@ -40,6 +40,7 @@ public class MainMenu extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        
 
     }
 
@@ -103,6 +104,10 @@ public class MainMenu extends AppCompatActivity
         DrawerLayout drawer= (DrawerLayout)findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public Question getQuestion(int index){
+    questions.
+    
     }
 }
 
