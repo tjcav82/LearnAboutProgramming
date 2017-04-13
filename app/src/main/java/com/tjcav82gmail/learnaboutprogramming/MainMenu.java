@@ -22,6 +22,7 @@ public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     public QuestionsClass questions=new QuestionsClass();
+    public Question currentquestion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,8 +106,15 @@ public class MainMenu extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public Question getQuestion(int index){
-    questions.
+    //use this funstion to retrive and display the question
+    public Question getQuestion(int index, RadioButton a, RadioButton b, RadioButton c, RadioButon d){
+           
+           currentquestion=questions.k.get(index);
+
+            a.setText(currentquestion.a);
+            b.setText(currentquestion.b);
+            c.setText(currentquestion.c);
+            d.setText(currentquestion.d);
     
     }
 }
