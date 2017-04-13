@@ -21,6 +21,7 @@ import static android.support.v4.view.GravityCompat.*;
 public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    public QuestionsClass questions=new QuestionsClass();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
