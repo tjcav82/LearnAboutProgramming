@@ -26,6 +26,7 @@ public class GameFragment extends Fragment implements View.OnClickListener{
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         myView = inflater.inflate(R.layout.fragment_game,container, false);
+       getQuestion(index,qust,a,b,c,d);
         a=(RadioButton)myView.findViewById(R.id.radioButton);
         b=(RadioButton)myView.findViewById(R.id.radioButton2);
         c=(RadioButton)myView.findViewById(R.id.radioButton3);
