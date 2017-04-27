@@ -31,6 +31,11 @@ public class GameFragment extends Fragment implements View.OnClickListener{
         b=(RadioButton)myView.findViewById(R.id.radioButton2);
         c=(RadioButton)myView.findViewById(R.id.radioButton3);
         d=(RadioButton)myView.findViewById(R.id.radioButton4);
+       
+       a.setOnClickListener(this);
+       b.setOnClickListener(this);
+       c.setOnClickListener(this);
+       d.setOnClickListener(this);
         return myView;
     }
     public Question getQuestion(int index, TextView qview, RadioButton a, RadioButton b, RadioButton c, RadioButton d){
