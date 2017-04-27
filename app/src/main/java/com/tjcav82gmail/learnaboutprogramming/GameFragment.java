@@ -12,7 +12,7 @@ import android.view.ViewGroup;
  */
 
 public class GameFragment extends Fragment implements View.OnClickListener{
-   View myView;
+    View myView;
     public QuestionsClass questions=new QuestionsClass();
     public Question currentquestion;
     RadioButton a;
@@ -26,37 +26,46 @@ public class GameFragment extends Fragment implements View.OnClickListener{
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         myView = inflater.inflate(R.layout.fragment_game,container, false);
-       getQuestion(index,qust,a,b,c,d);
+       qust=(TextView)myView.findViewById(R.id.textView4);
         a=(RadioButton)myView.findViewById(R.id.radioButton);
         b=(RadioButton)myView.findViewById(R.id.radioButton2);
         c=(RadioButton)myView.findViewById(R.id.radioButton3);
         d=(RadioButton)myView.findViewById(R.id.radioButton4);
-       
-       a.setOnClickListener(this);
-       b.setOnClickListener(this);
-       c.setOnClickListener(this);
-       d.setOnClickListener(this);
+        getQuestion(index,qust,a,b,c,d);
+        a.setOnClickListener(this);
+        b.setOnClickListener(this);
+        c.setOnClickListener(this);
+        d.setOnClickListener(this);
         return myView;
     }
     public Question getQuestion(int index, TextView qview, RadioButton a, RadioButton b, RadioButton c, RadioButton d){
 
         currentquestion=questions.k.get(index);
         qview.setText(currentquestion.Question);
+        a.setChecked(false);
+        b.setChecked(false);
+        c.setChecked(false);
+        d.setChecked(false);
+
         a.setText(currentquestion.a);
         b.setText(currentquestion.b);
         c.setText(currentquestion.c);
         d.setText(currentquestion.d);
-  return currentquestion;
+        return currentquestion;
     }
 
     @Override
     public void onClick(View v) {
         RadioButton g=(RadioButton)v;
-        if(index<questions.k.size()) {
+
             if (currentquestion.ans_check(g.getText().toString())) {
                 index++; //go to next question
+                if(index<questions.k.size()) {
                 getQuestion(index, qust, a, b, c, d);
-            }
+            }else{
+
+                    //no more questions make app do somehting else
+                }
         }
     }
 }
